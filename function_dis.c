@@ -10,7 +10,7 @@
   */
 int _print_a_char(va_list args)
 {
-	_write(va_arg(args, int));
+	_display(va_arg(args, int));
 	return (1);
 }
 
@@ -29,19 +29,19 @@ int _print_a_string(va_list args)
 	{
 		while (arg[i])
 		{
-			_write(arg[i]);
+			_display(arg[i]);
 			i++;
 		}
 
 		return (i);
 	}
 
-	_write('(');
-	_write('n');
-	_write('u');
-	_write('l');
-	_write('l');
-	_write(')');
+	_display('(');
+	_display('n');
+	_display('u');
+	_display('l');
+	_display('l');
+	_display(')');
 	return (6);
 }
 
@@ -60,7 +60,7 @@ int _print_a_integer(va_list args)
 	m = n;
 	if (m < 0)
 	{
-		_write('-');
+		_display('-');
 		m = m * -1;
 		n = m;
 		count += 1;
@@ -88,5 +88,5 @@ void _recursion_integer(int a)
 	t = a;
 	if (t / 10)
 		_recursion_integer(t / 10);
-	_write(t % 10 + '0');
+	_display(t % 10 + '0');
 }
